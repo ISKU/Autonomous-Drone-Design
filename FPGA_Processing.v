@@ -370,6 +370,7 @@ module FPGA_Processing (
 	//assign mem_bex[0] = ~(mcs1 | mcs3 | mcs5);	// 16bit LSB Byte enable
 	
 	assign AMAmem_data = 
+		(isMatching == 1'b1) ? 16'b0000011111100000 :
 		(isCorner == 1'b1) ? 16'b1111100000000000 :
 		(~AMAmem_csx ) ? vmem_q : 16'bZ;
 	assign vmem_data =
@@ -378,7 +379,18 @@ module FPGA_Processing (
 		(sramRead) ? {vadr[15], sramAddr} :
 		(mcs1 | mcs2) ? vadr : 
 		{A_addr, AMAmem_adr}; // 16bit SRAM address
+		
+
+	wire [14:0] bufferAddr;
+	wire [7:0] bufferData;
+	wire bufferWren;
 	
+	assign bufferAddr =
+		(mcs1 | mcs2) ? vadr : FBAddr;
+	assign bufferData =
+		(mcs1 | mcs2 ) ? vdata : 16'bx;
+	assign bufferWren = mcs1;
+
 //-----------------------------------------------------------------
 // FPGA waitx signal generation
 // if Eagle is interfaced to low speed device, waitx has to delayed  
@@ -476,6 +488,7 @@ module FPGA_Processing (
 		.thres(thres)
 	);
 	
+	
 	wire [14:0] scoreAddr;
 	wire [7:0] scoreValue;
 	wire [7:0] scoreData;
@@ -500,13 +513,39 @@ module FPGA_Processing (
 		.q(scoreData)
 	);
 	
+	wire [14:0] outAddr;
+	wire [7:0] outPixel;
+	
 	NMS_Top nms(
 		.clock(Sys_clk),
-		.nReset(nReset),
+		.nReset(resetx),
 		.refAddr(vadr[14:0]),
 		.scoreData(scoreData),
 		.scoreAddr(scoreAddr),
 		.outAddr(outAddr),
 		.outPixel(outPixel)
+	);
+	
+	
+	wire [239:0] position;
+	wire isMatching;
+	wire [14:0] FBAddr;
+	wire [7:0] FBData;
+	
+	Mat_Top matching(
+		.clock(Sys_clk),
+		.nReset(resetx),
+		.refAddr(vadr[14:0]),
+		.isFeature(outPixel),
+		.position(position),
+		.isMatching(isMatching)
+	);
+	
+	Buffer buffer(
+		.clock(Sys_clk),
+		.address(BufferAddr),
+		.data(bufferData),
+		.wren(bufferWren),
+		.q(FBData)
 	);
 endmodule 
