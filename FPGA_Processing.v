@@ -476,8 +476,9 @@ module FPGA_Processing (
 		.thres(thres)
 	);
 	
-	
+	wire [14:0] scoreAddr;
 	wire [7:0] scoreValue;
+	wire [7:0] scoreData;
 	wire scoreWren;
 	
 	FS_Top score(
@@ -497,5 +498,15 @@ module FPGA_Processing (
 		.data(scoreValue),
 		.wren(scoreWren),
 		.q(scoreData)
+	);
+	
+	NMS_Top nms(
+		.clock(Sys_clk),
+		.nReset(nReset),
+		.refAddr(vadr[14:0]),
+		.scoreData(scoreData),
+		.scoreAddr(scoreAddr),
+		.outAddr(outAddr),
+		.outPixel(outPixel)
 	);
 endmodule 

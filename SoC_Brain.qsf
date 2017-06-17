@@ -146,6 +146,11 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LE
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=8192" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=63808" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=8192" -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE NMS_Top.v
+set_global_assignment -name VERILOG_FILE NMS_Reg.v
+set_global_assignment -name VERILOG_FILE NMS_Datapath.v
+set_global_assignment -name VERILOG_FILE NMS_Controller.v
+set_global_assignment -name VERILOG_FILE NMS_AddrCal.v
 set_global_assignment -name VERILOG_FILE FS_Top.v
 set_global_assignment -name VERILOG_FILE FS_Datapath.v
 set_global_assignment -name VERILOG_FILE FD_Top.v
