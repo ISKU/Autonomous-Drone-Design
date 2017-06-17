@@ -137,5 +137,5 @@ module FD_Reg (clock, nReset, readen, regAddr, sramData, refPixel, adjPixel, thr
 	// readen이 1로 셋팅 되면 기준점 데이터와, 16개의 인접한 점의 데이터를 한번에 Output으로 보낸다.
 	assign refPixel = (readen) ? refPoint : 8'bx; // 기준점 
 	assign adjPixel = (readen) ? {r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16} : 128'bx; // 16개 점
-	assign thres = (readen) ? 8'd30 : 8'bx; // 임게값
+	assign thres = (readen) ? 8'd25 : 8'bx; // 임계값
 endmodule 

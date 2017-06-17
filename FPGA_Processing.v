@@ -454,7 +454,6 @@ module FPGA_Processing (
 	assign led_test = led_blink[5];
 ///////////////////////////////////////////////////////////////////
 	
-	
 	wire isCorner;
 	wire [7:0] refPixel;
 	wire [14:0] sramAddr;
@@ -475,5 +474,28 @@ module FPGA_Processing (
 		.adjPixel(adjPixel),
 		.compare(compare),
 		.thres(thres)
+	);
+	
+	
+	wire [7:0] scoreValue;
+	wire scoreWren;
+	
+	FS_Top score(
+		.isCorner(isCorner),
+		.compare(compare),
+		.refAddr(vadr[14:0]),
+		.refPixel(refPixel),
+		.adjPixel(adjPixel),
+		.thres(thres),
+		.scoreValue(scoreValue),
+		.wren(scoreWren)
+	);
+	
+	ScoreMem score_memory(
+		.clock(Sys_clk),
+		.address(scoreAddr),
+		.data(scoreValue),
+		.wren(scoreWren),
+		.q(scoreData)
 	);
 endmodule 
