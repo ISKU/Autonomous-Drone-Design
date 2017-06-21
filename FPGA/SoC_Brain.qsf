@@ -1,0 +1,177 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 14:35:34  April 30, 2014
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		SoC_Brain_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE75U19I7
+set_global_assignment -name TOP_LEVEL_ENTITY FPGA_Processing
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:35:34  APRIL 30, 2014"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_H6 -to AMAmem_adr[14]
+set_location_assignment PIN_H4 -to AMAmem_adr[13]
+set_location_assignment PIN_H3 -to AMAmem_adr[12]
+set_location_assignment PIN_H2 -to AMAmem_adr[11]
+set_location_assignment PIN_H1 -to AMAmem_adr[10]
+set_location_assignment PIN_G4 -to AMAmem_adr[9]
+set_location_assignment PIN_G3 -to AMAmem_adr[8]
+set_location_assignment PIN_F2 -to AMAmem_adr[7]
+set_location_assignment PIN_F1 -to AMAmem_adr[6]
+set_location_assignment PIN_E3 -to AMAmem_adr[5]
+set_location_assignment PIN_E1 -to AMAmem_adr[4]
+set_location_assignment PIN_D2 -to AMAmem_adr[3]
+set_location_assignment PIN_C2 -to AMAmem_adr[2]
+set_location_assignment PIN_C1 -to AMAmem_adr[1]
+set_location_assignment PIN_B2 -to AMAmem_adr[0]
+set_location_assignment PIN_P3 -to AMAmem_data[15]
+set_location_assignment PIN_P2 -to AMAmem_data[14]
+set_location_assignment PIN_P1 -to AMAmem_data[13]
+set_location_assignment PIN_N6 -to AMAmem_data[12]
+set_location_assignment PIN_N5 -to AMAmem_data[11]
+set_location_assignment PIN_N2 -to AMAmem_data[10]
+set_location_assignment PIN_N1 -to AMAmem_data[9]
+set_location_assignment PIN_M6 -to AMAmem_data[8]
+set_location_assignment PIN_M4 -to AMAmem_data[7]
+set_location_assignment PIN_M3 -to AMAmem_data[6]
+set_location_assignment PIN_M2 -to AMAmem_data[5]
+set_location_assignment PIN_M1 -to AMAmem_data[4]
+set_location_assignment PIN_L6 -to AMAmem_data[3]
+set_location_assignment PIN_AA1 -to AMAmem_data[2]
+set_location_assignment PIN_V3 -to AMAmem_data[1]
+set_location_assignment PIN_V4 -to AMAmem_data[0]
+set_location_assignment PIN_AB10 -to AMAmem_irq0
+set_location_assignment PIN_AB5 -to AMAmem_irq1
+set_location_assignment PIN_AA7 -to AMAmem_rdx
+set_location_assignment PIN_AA9 -to AMAmem_waitx
+set_location_assignment PIN_AA8 -to AMAmem_wrx
+set_location_assignment PIN_T21 -to clk_llc
+set_location_assignment PIN_G21 -to clk_llc2
+set_location_assignment PIN_AA12 -to href
+set_location_assignment PIN_AA19 -to led_test
+set_location_assignment PIN_A11 -to odd
+set_location_assignment PIN_T16 -to resetx
+set_location_assignment PIN_J20 -to vpo[15]
+set_location_assignment PIN_J19 -to vpo[14]
+set_location_assignment PIN_J18 -to vpo[13]
+set_location_assignment PIN_H22 -to vpo[12]
+set_location_assignment PIN_H21 -to vpo[11]
+set_location_assignment PIN_H20 -to vpo[10]
+set_location_assignment PIN_H19 -to vpo[9]
+set_location_assignment PIN_H17 -to vpo[8]
+set_location_assignment PIN_F22 -to vpo[7]
+set_location_assignment PIN_F21 -to vpo[6]
+set_location_assignment PIN_F19 -to vpo[5]
+set_location_assignment PIN_F17 -to vpo[4]
+set_location_assignment PIN_D22 -to vpo[3]
+set_location_assignment PIN_D21 -to vpo[2]
+set_location_assignment PIN_C22 -to vpo[1]
+set_location_assignment PIN_C21 -to vpo[0]
+set_location_assignment PIN_AA11 -to vref
+set_location_assignment PIN_AA10 -to AMAmem_csx
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to A_addr -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to odd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to vmem_addr[15]~1 -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to A_addr -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to odd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to vmem_addr[15]~1 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=3" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=3" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to clk_llc -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=9975" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=36" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=8192" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=63808" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=8192" -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE Mat_AddrReg.v
+set_global_assignment -name VERILOG_FILE DBMEM.v
+set_global_assignment -name VERILOG_FILE Mat_Top.v
+set_global_assignment -name VERILOG_FILE Mat_Reg.v
+set_global_assignment -name VERILOG_FILE Mat_Datapath.v
+set_global_assignment -name VERILOG_FILE Mat_Counter.v
+set_global_assignment -name VERILOG_FILE Mat_Controller.v
+set_global_assignment -name VERILOG_FILE Mat_AddrCal.v
+set_global_assignment -name VERILOG_FILE NMS_Top.v
+set_global_assignment -name VERILOG_FILE NMS_Reg.v
+set_global_assignment -name VERILOG_FILE NMS_Datapath.v
+set_global_assignment -name VERILOG_FILE NMS_Controller.v
+set_global_assignment -name VERILOG_FILE NMS_AddrCal.v
+set_global_assignment -name VERILOG_FILE FS_Top.v
+set_global_assignment -name VERILOG_FILE FS_Datapath.v
+set_global_assignment -name VERILOG_FILE FD_Top.v
+set_global_assignment -name VERILOG_FILE FD_Reg.v
+set_global_assignment -name VERILOG_FILE FD_Datapath.v
+set_global_assignment -name VERILOG_FILE FD_Controller.v
+set_global_assignment -name VERILOG_FILE FD_AddrCal.v
+set_global_assignment -name VERILOG_FILE RAM.v
+set_global_assignment -name VERILOG_FILE FPGA_Processing.v
+set_global_assignment -name QIP_FILE pll.qip
+set_global_assignment -name CDF_FILE output_files/output_files/Chain.cdf
+set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
+set_global_assignment -name QIP_FILE ScoreMem.qip
+set_global_assignment -name QIP_FILE Buffer.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
